@@ -1,5 +1,7 @@
 package com.example.Enum;
 
+import java.util.stream.Stream;
+
 /*
  * Now to use this enum in code, there are some points we have to follow:-
 We have to create parameterized constructor for this enum class. Why? 
@@ -12,15 +14,25 @@ We have to create one getter method to get the value of enums.
 */
 
 public class CustomValEnum {
+	
+	public void print() {
+		System.out.println("Enumsss : "+ Fruits.getEnumByString("Green"));
+	}
 
 	public static void main(String[] args) {
 		
 		System.out.println("Fruits :" + Fruits.ORANGE.getValue);
-		Fruits[] fr = Fruits.values();
 		
+		//these lines can be written in JAVA 8 using lambdas.
+		/*Fruits[] fr = Fruits.values();
 		for (Fruits fruits : fr) {
 			System.out.println("Fruit name : " + fruits.name() + " , " + "color  :" + fruits.getValue);
-		}
+		}*/
+		
+		Stream.of(Fruits.values()).forEach(fruit -> System.out.println("Fruit name : " + fruit.name() + " , " + "color  :" + fruit.getValue));
+		
+		new CustomValEnum().print();
+		
 		
 	}
 
@@ -41,6 +53,11 @@ public class CustomValEnum {
 		// here creating private parameterized constructor for initializing values of the Enum constants;
 		private Fruits(String getValue) {
 			this.getValue = getValue;
+		}
+		
+		public static String getEnumByString(String code) {
+			return Stream.of(Fruits.values()).filter(x -> x.getValue.equalsIgnoreCase(code)).map(Fruits::name)
+					.findAny().orElse("No Such Enum Exists!");
 		}
 	}
 }
