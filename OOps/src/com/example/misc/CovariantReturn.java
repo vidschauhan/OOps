@@ -1,7 +1,7 @@
 package com.example.misc;
 
 /*Java 5.0 onwards it is possible to have different return type for a overriding method in child class, 
-but child’s return type should be sub-type of parent’s return type. 
+but childï¿½s return type should be sub-type of parentï¿½s return type. 
 Overriding method becomes variant with respect to return type.*/
 
 public class CovariantReturn {
