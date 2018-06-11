@@ -6,7 +6,7 @@ public class StaticMethodHiding {
 	
 		A a = new B();
 		a.show(); // Will print Show() of Class A.  // By the way its illegal to call a static method using objects.
-		//If we make both A.fun() and B.fun() as non-static then the above program would print “B.fun()”.
+		//If we make both A.fun() and B.fun() as non-static then the above program would print B.shoe().
  
 	}
 

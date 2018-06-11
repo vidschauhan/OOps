@@ -4,7 +4,10 @@ public class InstanceInitializerBlock {
 
 	public static void main(String[] args) {
 		
-		Derived1 d = new Derived1();
+		Derived1 d = new Derived1(); // New Object of Derived.
+		System.out.println(d.toString()); 
+		d = new Derived1(); // New Object of derived with different memory reference.
+		System.out.println(d.toString());
 
 	}
 

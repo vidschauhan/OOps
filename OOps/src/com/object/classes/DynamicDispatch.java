@@ -25,7 +25,12 @@ public class DynamicDispatch {
 		A obja = new B();
 		obja.show(); // will call B's show() because object type is of B;
 		
-		
+		/*
+		  obja.display(); 
+		 *This method will produce compile time error, because display
+		 *method is unknown to reference type class A. If want to access then override
+		 * the display() in base class.
+		 */
 		
 		//B objb = new A(); // compile time exception;
 		/*B objb = (B) new A();  // not valid. RUntime exception Classcast Exception.
@@ -46,6 +51,10 @@ class B extends A {
 	
 	public void show() {
 		System.out.println("B's method");
+	}
+	
+	public void display() {
+		System.out.println("display");
 	}
 }
 

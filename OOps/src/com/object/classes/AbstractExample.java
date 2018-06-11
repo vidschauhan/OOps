@@ -16,6 +16,8 @@ public class AbstractExample {
 		ft.gameDuration();
 		ft.tooString();
 		
+		ft.concrete();
+		
 		
 
 	}
@@ -34,6 +36,11 @@ abstract class Sports{
 	
 	abstract void gameDuration();
 	abstract void tooString();
+	
+	/*Concrete method of Abstract Class*/
+	public void concrete() {
+		System.out.println("Concrete method of abstract class");
+	}
 }
 
 class Badminton extends Sports {
@@ -41,6 +48,7 @@ class Badminton extends Sports {
 	String country;
 	int time;
 	public Badminton(int playerNum, String game,String country,int time) {
+		/*Initializing the Super class constructor by calling super as Abstract class can't be instantiated directly.*/		
 		super(playerNum, game);
 		this.country= country;
 		this.time=time;

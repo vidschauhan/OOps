@@ -3,6 +3,18 @@ package com.object.classes;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+
+/*  Difference between Class.newInstance() and Constructor.newInstance() By name,
+  both methods look same but there are differences between them which we are as
+  following Class.newInstance() can only invoke the no-arg constructor
+  Constructor.newInstance() can invoke any constructor, regardless of the
+  number of parameters. Class.newInstance() requires that the constructor
+  should be visible Constructor.newInstance() can also invoke private
+  constructors under certain circumstances. Class.newInstance() throws any
+  exception (checked or unchecked) thrown by the constructor.
+  Constructor.newInstance() always wraps the thrown exception with an
+  InvocationTargetException.*/
+ 
 public class Way2CreateObjects {
 
 	public static void main(String[] args)
@@ -80,16 +92,3 @@ class Real {
 		y=20;
 	}
 }
-
-/*
- * Difference between Class.newInstance() and Constructor.newInstance() By name,
- * both methods look same but there are differences between them which we are as
- * following Class.newInstance() can only invoke the no-arg constructor
- * Constructor.newInstance() can invoke any constructor, regardless of the
- * number of parameters. Class.newInstance() requires that the constructor
- * should be visible Constructor.newInstance() can also invoke private
- * constructors under certain circumstances. Class.newInstance() throws any
- * exception (checked or unchecked) thrown by the constructor.
- * Constructor.newInstance() always wraps the thrown exception with an
- * InvocationTargetException.
- */
